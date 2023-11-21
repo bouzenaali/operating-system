@@ -1,0 +1,20 @@
+Explication de resultats de l'execution du code source :
+
+1- le programme renvoi 3 fois les processus courant 
+2- la premiere fois est au debut du programme
+3- la deuxieme fois est apres l'allocation de l'espace memoire 
+4- la troisieme fios est apres la liberation de cette espace
+
+Les remarques :
+
+1- on remarque que a la premiers fois le VSZ est 2464
+2- la deuxieme fois est de 1190643 
+3- la troisieme fois est de 2600
+4- donc l'espace que prend le processus est augmente lors du l'allocation de l'espace memoire 
+
+($ ulimit -v): cette commande liste le maximum d'espace memoire qu'un processus peut prendre (le cas generale est "unlimited")
+($ ulimit -v 10000): cette commande limit l'espace memoire qu'un processus peut prendre a 10000ko 
+
+Remarque:
+- apres l'excution de ulimit -v 100 on aura un resultat de (segmentation fault) apres chaque commande car 100ko n'est pas suffisante pour que n'importe quelle programme s'execute
+
