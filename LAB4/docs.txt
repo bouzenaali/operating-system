@@ -1,0 +1,9 @@
+1. what happens during the execution of the following program ?
+	- the program displays the content of the toto.txt file 
+	- the program creates a child process and depending on the result of the fork() the program runs differntly
+	- one process will display the first five characters and the other will print the next 
+
+2. what happens if lines 10 and 11 are swapped ?
+	- now the parent and the child will open the file separatly so they will both read the first five characters
+
+   

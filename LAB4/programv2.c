@@ -10,10 +10,11 @@ int main(int argc, char *argv[])
 	int fd;
 	pid_t pid;
 
-	 if ((fd = open("toto.txt", O_RDONLY)) < 0)
+	pid = fork(); sleep(1);
+	
+	if ((fd = open("toto.txt", O_RDONLY)) < 0)
 		 return EXIT_FAILURE;
 
-	 pid = fork(); sleep(1);
 
 	 switch (pid)
 	 {
@@ -24,12 +25,10 @@ int main(int argc, char *argv[])
 			printf("from case 0 ");
 			break;
 		default:
-			wait();
 			read(fd, tampon, 5);
 			printf("from default ");
 	 }
 
-	 if (pid == 0){ printf("from the child : ");} else {printf("from the parent : ");}
 	 sleep(1); printf("%s\n", tampon); close(fd);
 	 return EXIT_SUCCESS;
 }
