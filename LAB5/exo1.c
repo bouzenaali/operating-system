@@ -8,47 +8,37 @@ int main(int argc, char *argv[]) {
     strcpy(myFile, argv[1]);
 
     FILE *file;
-    char buffer[5];  // Adjusted buffer size
+    char buffer[5];
+
+	file = fopen(myFile, "r+");
+	if (file == NULL) {
+		perror("Unable to open file for writing 1\n");
+		return 1;
+	}
 
     if (fork()) {
-        file = fopen(myFile, "r+");
-        if (file == NULL) {
-            perror("Unable to open file for reading");
-            return 1;
-        }
 
-        fprintf(file, "Parent");
-        fclose(file); 
+        fprintf(file, "Parent ");
+		fflush(file);
+
         sleep(2);
 
-        file = fopen(myFile, "r");
-        if (file == NULL) {
-            perror("Unable to open file for reading\n");
-            return 1;
-        }
-
+		fseek(file, 7, SEEK_SET);
         while (fgets(buffer, sizeof(buffer), file) != NULL) {
             printf("%s", buffer);
         }
 
-        fclose(file);
     } else {
         sleep(1);
-        file = fopen(myFile, "r+");
-        if (file == NULL) {
-            perror("Unable to open file for reading\n");
-            return 1;
-        }
 
-        sleep(1);
-
+		fseek(file, 0, SEEK_SET);
         while (fgets(buffer, sizeof(buffer), file) != NULL) {
             printf("%s", buffer);
         }
 
-        fprintf(file, "Child");
-        fclose(file);
+        fprintf(file, "Child ");
+		fflush(file);
     }
-
+	fclose(file);
     return 0;
 }
