@@ -27,6 +27,7 @@ int main(int argc, char *argv[]) {
         while (fgets(buffer, sizeof(buffer), file) != NULL) {
             printf("%s", buffer);
         }
+		
 
     } else {
         sleep(1);
