@@ -9,6 +9,7 @@ to run the scripts you'll have to compile them first
 `/bin`: here you'll find all the compiled files <br>
 
 - `exo.c`: here you'll find the source code
+- `exo.txt`: here you'll find some documentations 
 
 
 
