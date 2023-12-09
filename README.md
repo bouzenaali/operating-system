@@ -5,7 +5,7 @@ This repo contais most of the sollution of my operating system module labs
 you will find the solutions organised in folders for each lab.
 
 to run the scripts you'll have to compile them first
-```
+```bash
 make all
 ```
 
