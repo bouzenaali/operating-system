@@ -9,3 +9,5 @@
 
 #Unignore the makefile
 !makefile
+
+/bin

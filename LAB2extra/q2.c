@@ -4,7 +4,7 @@
 #include <sys/types.h>
 #include <sys/wait.h>
 
-void createChildProcesses(char processName,char[] processChilds, int numChildren) {
+void createChildProcesses(char processName,char processChilds[], int numChildren) {
     pid_t parent_pid = fork();
     if (parent_pid<0){
      perror("fork failed");
