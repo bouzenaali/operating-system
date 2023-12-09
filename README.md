@@ -3,11 +3,13 @@ This repo contais most of the sollution of my operating system module labs
 
 ## How it works ?
 you will find the solutions organised in folders for each lab.
+
 to run the scripts you'll have to compile them first
-`make all` <br>
+```
+make all
+```
 
-`/bin`: here you'll find all the compiled files <br>
-
+- `/bin`: here you'll find all the compiled files
 - `exo.c`: here you'll find the source code
 - `exo.txt`: here you'll find some documentations 
 
