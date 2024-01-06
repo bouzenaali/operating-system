@@ -2,7 +2,7 @@ CC     = @/usr/bin/gcc
 CFLAGS = -Wall -g -std=c99
 ECHO   = @echo
 
-all: directories LAB1 LAB2 LAB2extra LAB3 LAB4 LAB5 complete
+all: directories LAB1 LAB2 LAB2extra LAB3 LAB4 LAB5 LAB6 complete
 
 clean:
 	@rm -rf bin
@@ -53,6 +53,10 @@ LAB5: directories
 	$(ECHO) "Build exo1 {LAB5}"
 	$(CC) $(CFLAGS) "LAB5/exo2.c" -o bin/exo2
 	$(ECHO) "Build exo2 {LAB5}"
+
+LAB6: directories
+	$(CC) $(CFLAGS) "LAB6/program.c" -o bin/program6
+	$(ECHO) "Build program6 {LAB6}"
 
 complete:
 	$(ECHO) "All binaries build to directory 'bin/'"
