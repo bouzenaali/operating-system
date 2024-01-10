@@ -4,7 +4,7 @@
 #include<unistd.h>
 
 int main(int argc, char *argv[]) {
-    char myFile[10];
+    char myFile[20];
     strcpy(myFile, argv[1]);
 
     FILE *file;
