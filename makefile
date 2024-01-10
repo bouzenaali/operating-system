@@ -2,7 +2,7 @@ CC     = @/usr/bin/gcc
 CFLAGS = -Wall -g -std=c99
 ECHO   = @echo
 
-all: directories LAB1 LAB2 LAB2extra LAB3 LAB4 LAB5 LAB6 complete
+all: clean directories LAB1 LAB2 LAB2extra LAB3 LAB4 LAB5 LAB6 complete
 
 clean:
 	@rm -rf bin
