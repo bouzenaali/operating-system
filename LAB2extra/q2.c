@@ -4,44 +4,35 @@
 #include <sys/types.h>
 #include <sys/wait.h>
 
-void createChildProcesses(char processName,char processChilds[], int numChildren) {
-    pid_t parent_pid = fork();
-    if (parent_pid<0){
-     perror("fork failed");
-     return 1;
-    } else if (parent_pid == 0){
-      printf("Process %c (PID: %d) reporting its parent A",processName,parent_pid);
-
-      }
-    for (int i = 0; i < numChildren; i++) {
-        pid_t child_pid = fork();
-
-        if (child_pid < 0) {
-            perror("Fork failed");
-            exit(1);
-        } else if (child_pid == 0) {
-	    for(int j;j++;j<numChildren){
-            // This is the child process
-            printf("Process %c (PID: %d) reporting its parent PID: %d\n", processChild[j], getpid(), getppid());
-            // Terminate the loop in the child process
-            }
-	    break;
-        }
-    }
-
-    // Parent process waits for all its children to complete
-    if (getpid() != 1) {
-        for (int i = 0; i < numChildren; i++) {
-            wait(NULL);
-        }
-    }
-}
 
 int main() {
-    printf("Process A (PID: %d)\n", getpid());
+    printf("I am the process A THE PARENT\n");
+    int id1 = fork();
+    if (id1 == 0){
+        printf("I am the process B SON OF A\n");
+        int id3 = fork();
 
-    createChildProcesses('b',['d'], 1);
-    createChildProcesses('c',['e','f'], 2);
+        if (id3 == 0){
+            printf("I am the process D SON OF B\n");
+        }
+
+    } else {
+        int id2 = fork();
+        if(id2 == 0){
+            printf("I am the process C SON OF A\n");
+
+            int id4 = fork();
+
+            if (id4 == 0){
+                printf("I am the process E SON OF C\n");
+            } else {
+                int id5 = fork();
+                if (id5==0){
+                    printf("I am the process F SON OF C\n");
+                }
+            }
+        }
+    }
     return 0;
 }
 
