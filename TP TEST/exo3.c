@@ -33,9 +33,10 @@ int main(){
             }
         }
     }
-    
+
     wait(NULL);
     return 0;
 }
+
 
 //  -- 11/01/2024 --
