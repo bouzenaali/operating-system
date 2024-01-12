@@ -2,6 +2,7 @@
 #include<stdio.h>
 #include<unistd.h>
 #include<fcntl.h>
+#include<sys/wait.h>
 
 char tampon[6];
 
@@ -24,7 +25,7 @@ int main(int argc, char *argv[])
 			printf("from case 0 ");
 			break;
 		default:
-			wait();
+			wait(NULL);
 			read(fd, tampon, 5);
 			printf("from default ");
 	 }
