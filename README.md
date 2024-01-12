@@ -1,12 +1,12 @@
 # Operating systems
-This repo contais most of the sollution of my operating system module labs
+This repo contais all of the sollution of my operating system module labs **+** the solution of the final test
 
 ## How it works ?
 you will find the solutions organised in folders for each lab.
 
-to run the scripts you'll have to compile them first
+- to run the scripts you'll have to compile them first
 ```bash
-make all
+$ make all
 ```
 
 - `/bin`: here you'll find all the compiled files
