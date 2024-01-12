@@ -55,7 +55,7 @@ LAB5: directories
 	$(ECHO) "Build exo2 {LAB5}"
 
 LAB6: directories
-	$(CC) $(CFLAGS) "LAB6/program.c" -o bin/program6
+	$(CC) $(CFLAGS) "LAB6/program.c" -o bin/program6 -pthread
 	$(ECHO) "Build program6 {LAB6}"
 
 TEST: directories
